@@ -68,8 +68,9 @@
             </tr>
             <tr>
                 <td>Kiểm tra phần tử có trong mảng:</td>
-                <td><?php echo $results['searchArray']. " ". "có trong mảng" ?></td>
+                <td><?php echo $results['searchArray'] ? 'có' : 'không'; " " ."trong mảng" ?></td>
             </tr>
+
         </table>
     <?php endif; ?>
 
