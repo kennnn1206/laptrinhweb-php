@@ -32,6 +32,6 @@
                 </td>
             </tr>
         </table>
-        <a href="./Bai3ktranhaplieu.php">Quay lại trang trước</a>
+        <a href="./bai3ktranhaplieu.php">Quay lại trang trước</a>
 </body>
 </html>
