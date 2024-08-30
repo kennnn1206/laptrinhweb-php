@@ -85,6 +85,10 @@
             color: #333;
             margin: 5px 0;
         }
+
+        .error {
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -153,21 +157,21 @@
                     }
                 ?>
             </p> -->
-            <p><?php echo isset($errors['firstName']) ? htmlspecialchars($errors['firstName']) : 'First name'; ?></p>
+            <p class="error"><?php echo isset($errors['firstName']) ? htmlspecialchars($errors['firstName']) : '<p style="color: black;">First name</p>'; ?></p>
         </div>
         <div>
             <input type="text" id="lastName" name="lastName" class="formInput" value="<?php echo $lastName; ?>">
-            <p><?php echo isset($errors['lastName']) ? htmlspecialchars($errors['lastName']) :  'Last Name'; ?></p>
+            <p class="error"><?php echo isset($errors['lastName']) ? htmlspecialchars($errors['lastName']) :  '<p style="color: black;">Last name</p>'; ?></p>
         </div>
         <div>
             <label for="mail" class="title">Mail</label>
             <input type="mail" id="mail" name="mail" class="formInput" value="<?php echo $mail; ?>">
-            <p><?php echo isset($errors['mail']) ? htmlspecialchars($errors['mail']) : 'example@example.com'; ?></p>
+            <p class="error"><?php echo isset($errors['mail']) ? htmlspecialchars($errors['mail']) : '<p style="color: black;">example@example.com</p>'; ?></p>
         </div>
         <div>
             <label for="invoiceId" class="title">Invoice ID</label>
             <input type="text" id="invoiceId" name="invoiceId" class="formInput" value="<?php echo $invoiceId; ?>">
-            <p><?php echo isset($errors['invoiceId']) ?  htmlspecialchars($errors['invoiceId']) : ''; ?></p>
+            <p class="error"><?php echo isset($errors['invoiceId']) ?  htmlspecialchars($errors['invoiceId']) : ''; ?></p>
         </div>
         <div style="grid-column: span 2; width: 100%; padding-bottom: 20px;">
             <label class="title" style="margin-bottom: 10px; display: block;">Pay For</label>
@@ -217,6 +221,7 @@
                     <label class="check">Other</label>
                 </div>
             </div>
+            <p class="error"><?php echo isset($errors['pay_for']) ? htmlspecialchars($errors['pay_for']) : ''; ?></p>
         </div>
         <input type="submit" id="submitBtn" name="submit">
     </form>
