@@ -11,7 +11,6 @@
             padding: 0;
         }
         body{
-            height: 100vh;
             width: 100vw;
             display: flex;
             justify-content: center;
@@ -65,13 +64,16 @@
         #submitBtn:hover{
             background-color: #21D375;
         }
+       
         .output {
-            margin-top: 20px;
+            grid-column: span 2;
+            width: 550px;
             padding: 20px;
             border: 1px solid #ddd;
             border-radius: 10px;
             background-color: #f9f9f9;
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
         }
 
         .output h3 {
@@ -89,6 +91,57 @@
         .error {
             color: red;
         }
+
+        .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="file"],
+    .form-group textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .form-group textarea {
+        height: 100px;
+        resize: vertical;
+    }
+
+    .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        color: #8f8f8f;
+    }
+
+    .checkbox-group label {
+        width: 48%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
     </style>
 </head>
 <body>
@@ -96,6 +149,7 @@
     $firstName = $lastName = $mail = $invoiceId = "";
     $payFor = [];
     $errors = [];
+    
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["firstName"])) {
@@ -124,6 +178,7 @@
             $payFor = $_POST["pay_for"];
         }
 
+
         if (empty($errors)) {
             echo '<div class="output">';
             echo "<h4>Form đã được gửi thành công với các dữ liệu sau:</h4>" ;
@@ -131,7 +186,7 @@
             echo "Họ Tên: " .htmlspecialchars($_POST["firstName"]) . " " .htmlspecialchars($_POST["lastName"]) ."<br>";
             echo "Email: " .htmlspecialchars($_POST["mail"]) . "</br>";
             echo "Mã hóa đơn: " .htmlspecialchars($_POST["invoiceId"]) . "</br>";
-            echo "Pay for: " . implode(", ", $payFor) . "";
+            echo "Pay for: " . implode(", ", $payFor) . "</br>";
             echo '</div>';
         }
     }
