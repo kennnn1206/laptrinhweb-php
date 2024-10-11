@@ -4,7 +4,7 @@ function connect_db()
 {
 	global $conn;
   try {
-	   $conn = new PDO("mysql:host=sql110.infinityfree.com;dbname=if0_37103060_employee_db", 'if0_37103060', 'NguyenTuanAnh');
+	  $conn = new PDO("mysql:host=sql110.infinityfree.com;dbname=if0_37103060_employee_db", 'if0_37103060', 'NguyenTuanAnh');
 	  // set the PDO error mode to exception
 	  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	  //echo "Kết nối thành công";

@@ -17,7 +17,7 @@ $_SESSION['username'];
 </head>
 <body>
     <h1>Đây là trang dành cho quản trị viên</h1>
-    <a href="trangchu.php" class="ajax-link">Home</a>
+    <a href="home.php" class="ajax-link">Home</a>
     <a href="tk_list.php" class="ajax-link">Danh sách người dùng</a>
     <a href="employee_list.php" class="ajax-link">Danh sách nhân viên</a>
     <a href="logout.php">Thoát</a>
